@@ -5,31 +5,26 @@
       "type": "motoko"
     },
     "dfx-deploy-failure-example-frontend": {
-      "dependencies": [
-        "dfx-deploy-failure-example-backend"
-      ],
-      "source": [
-        "src/dfx-deploy-failure-example-frontend/dist"
-      ],
+      "dependencies": ["dfx-deploy-failure-example-backend"],
+      "source": ["src/dfx-deploy-failure-example-frontend/dist"],
       "type": "assets",
       "workspace": "dfx-deploy-failure-example-frontend"
     },
-    "internet_identity": {
-      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
-      "frontend": {},
-      "remote": {
-        "id": {
-          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
-        }
-      },
-      "type": "custom",
-      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    "icp_ledger": {
+      "type": "pull",
+      "id": "ryjl3-tyaaa-aaaaa-aaaba-cai",
+      "init_arg": "(variant { Init = record { minting_account = \"6485c1b6bf721e2ef6b682f84eb7735118a7c8b8775a059cb6288e169d63d14d\"; initial_values = vec { record { \"677a7f48f70001c1a80342c2e62327f47c8c94da62a261426ee0aeb6c6437231\"; record { e8s = 10_000_000_000 : nat64; }; }; }; send_whitelist = vec {}; transfer_fee = opt record { e8s = 10_000 : nat64; }; token_symbol = opt \"LICP\"; token_name = opt \"Local ICP\"; } })"
+    },
+    "store": {
+      "dependencies": ["icp_ledger"],
+      "main": "src/dfx-deploy-failure-example-backend/store/main.mo",
+      "type": "motoko"
     }
   },
   "defaults": {
     "build": {
       "args": "",
-      "packtool": ""
+      "packtool": "mops sources"
     }
   },
   "output_env_file": ".env",

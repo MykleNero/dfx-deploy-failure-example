@@ -1,0 +1,10 @@
+[dependencies]
+base = "0.16.0"
+map = "9.0.1"
+candle-db = "https://github.com/MykleNero/candle-db#master@3a8cf73daa4ddc36ea2cf154c40ede8ff3f16c6d"
+core = "0.6.0"
+ic-certification = "1.1.0"
+StableHashMap = "https://github.com/canscale/StableHashMap#master@06d5ae9d8561ec0c3768dbfcced6ee90be923b70"
+sha2 = "0.1.0"
+assets = "0.2.2"
+certified-assets = "0.6.0"
